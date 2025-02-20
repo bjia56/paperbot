@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  paperbot:
+    image: ghcr.io/bjia56/paperbot:main
+    container_name: paperbot
+    restart: unless-stopped
+    env_file:
+      - .env
+    logging:
+      driver: "json-file"
+      options:
+         max-size: "10m"
+         max-file: "10"
